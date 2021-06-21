@@ -4,8 +4,8 @@ Esto es un **CRUD** para una prueba técnica. Consiste en una parte **pública**
 
 ## Requisitos
 
-PHP 7.4.20 o superior
-NodeJS 14.16.1 o superior
+- PHP 7.4.20 o superior
+- NodeJS 14.16.1 o superior
 
 ## Instalación
 
