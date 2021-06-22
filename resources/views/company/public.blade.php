@@ -2,6 +2,12 @@
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+    <style>
+        img{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
 @endsection
 
 @section('js')
@@ -52,6 +58,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">CIF</th>
                     <th scope="col">NOMBRE</th>
+                    <th scope="col">IMAGEN</th>
                 </tr>
             </thead>
             <tbody>
@@ -60,6 +67,7 @@
                         <td>{{$company->id}}</td>
                         <td>{{$company->vat_number}}</td>
                         <td>{{$company->name}}</td>
+                        <td><img src="storage/{{$company->image}}"></td>
                         
                     </tr>   
                 @endforeach

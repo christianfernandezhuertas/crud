@@ -14,6 +14,7 @@ class Company extends Model
     protected $fillable = [
         'vat_number',
         'name',
+        'image',
         'public',
     ];
 

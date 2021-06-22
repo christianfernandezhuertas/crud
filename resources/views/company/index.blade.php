@@ -15,6 +15,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">CIF</th>
                 <th scope="col">NOMBRE</th>
+                <th scope="col">IMAGEN</th>
                 <th scope="col">PÚBLICA</th>
                 <th></th>
             </tr>
@@ -25,6 +26,7 @@
                     <td><a class="companyLink" href="companies/{{$company->id}}/">{{$company->id}}</a></td>
                     <td><a class="companyLink" href="companies/{{$company->id}}/">{{$company->vat_number}}</a></td>
                     <td><a class="companyLink" href="companies/{{$company->id}}/">{{$company->name}}</a></td>
+                    <td><a class="companyLink" href="companies/{{$company->id}}/"><img src="storage/{{$company->image}}"></a></td>
                     @if ($company->public)
                         <td><a class="companyLink" href="companies/{{$company->id}}/"><i class="fas fa-check"></i></a></td>   
                     @else
@@ -56,6 +58,10 @@
         .companyLink:hover {
             color: black;
             text-decoration: underline;
+        }
+        img{
+            height: 50px;
+            width: 50px;
         }
     </style>
 @stop

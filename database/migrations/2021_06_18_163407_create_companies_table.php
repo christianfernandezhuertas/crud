@@ -17,6 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->increments('id');
             $table->string('vat_number');
             $table->string('name');
+            $table->string('image')->nullable();
             $table->boolean('public');
             $table->timestamps();
         });

@@ -52,7 +52,21 @@ class CompanyController extends Controller
         
         $company->vat_number = $request->get('vat_number');
         $company->name = $request->get('name');
-        
+
+        // comprobamos si se envía una imagen en el formulario y la gestionamos en caso de existir. Formamos el nombre según la estructura 'company{id}.extension'
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+
+            //traemos el id de la última entrada y le sumamos 1
+            $lastEntry = Company::all()->last();
+            $newId = $lastEntry->id + 1;
+
+            $imageName = 'company' . $newId . '.' . $image->guessExtension();
+            $path = storage_path('app/public/');
+            $image->move($path, $imageName);
+            $company->image = $imageName;
+        }
+
         // mira el estado del checkbox y guarda un boolean en la columna public
         $checkbox = $request->get('public');
         if(isset($checkbox)){
@@ -105,6 +119,17 @@ class CompanyController extends Controller
         $company->vat_number = $request->get('vat_number');
         $company->name = $request->get('name');
         
+        // comprobamos si se envía una imagen en el formulario y la gestionamos en caso de existir. Formamos el nombre según la estructura 'company{id}.extension'
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+
+            $imageName = 'company' . $id . '.' . $image->guessExtension();
+            $path = storage_path('app/public/');
+            $image->move($path, $imageName);
+            $company->image = $imageName;
+        }
+        //dd($company->image);
+
         // mira el estado del checkbox y guarda un boolean en la columna public
         $checkbox = $request->get('public');
         if(isset($checkbox)){

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <form action="/companies/{{$company->id}}" method="POST">
+    <form action="/companies/{{$company->id}}" enctype="multipart/form-data" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -31,6 +31,10 @@
             @endphp
             
             <label class="form-check-label" for="public">Pública</label>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Imagen</label>
+            <input type="file" class="form-control" name="image" id="image" value="{{$company->image}}">
         </div>
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a href="/companies" class="btn btn-danger">Cancelar</a>
