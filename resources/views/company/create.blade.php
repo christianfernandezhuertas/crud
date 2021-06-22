@@ -11,11 +11,11 @@
         @csrf
         <div class="mb-3">
             <label for="vat_number" class="form-label">CIF</label>
-            <input type="text" class="form-control" id="vat_number" name="vat_number">
+            <input type="text" class="form-control" id="vat_number" name="vat_number" required>
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <input type="text" class="form-control" id="name" name="name" required>
         </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="public" name="public">

@@ -11,12 +11,6 @@ class Company extends Model
 
     protected $table = 'companies';
 
-    protected $fillable = [
-        'vat_number',
-        'name',
-        'image',
-        'public',
-    ];
 
     public function employees()
     {
