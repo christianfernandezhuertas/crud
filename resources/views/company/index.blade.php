@@ -26,7 +26,12 @@
                     <td><a class="companyLink" href="companies/{{$company->id}}/">{{$company->id}}</a></td>
                     <td><a class="companyLink" href="companies/{{$company->id}}/">{{$company->vat_number}}</a></td>
                     <td><a class="companyLink" href="companies/{{$company->id}}/">{{$company->name}}</a></td>
-                    <td><a class="companyLink" href="companies/{{$company->id}}/"><img src="storage/{{$company->image}}"></a></td>
+                    @if (!$company->image)
+                        <td>No hay imagen</td>
+                    @else
+                        <td><a class="companyLink" href="companies/{{$company->id}}/"><img src="storage/{{$company->image}}"></a></td>  
+                    @endif
+                    
                     @if ($company->public)
                         <td><a class="companyLink" href="companies/{{$company->id}}/"><i class="fas fa-check"></i></a></td>   
                     @else

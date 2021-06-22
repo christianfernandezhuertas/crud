@@ -67,7 +67,12 @@
                         <td>{{$company->id}}</td>
                         <td>{{$company->vat_number}}</td>
                         <td>{{$company->name}}</td>
-                        <td><img src="storage/{{$company->image}}"></td>
+                        @if (!$company->image)
+                        <td>No hay imagen</td>
+                        @else
+                            <td><img src="storage/{{$company->image}}"></td>
+                        @endif
+                        
                         
                     </tr>   
                 @endforeach
